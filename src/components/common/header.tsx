@@ -10,7 +10,7 @@ const Header = () => {
 
 const HeaderStyle = styled.header`
   h1 {
-    color: white;
+    color: ${({ theme }) => theme.color.primary};
   }
 `
 
