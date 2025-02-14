@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: ${({ themeName }) => themeName === 'light' ? 'white' : 'black'};
   }
 
   h1 {

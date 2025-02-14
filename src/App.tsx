@@ -1,19 +1,18 @@
-import { ThemeProvider } from 'styled-components'
 import './App.css'
-import GlobalStyle from './style/global'
-import { light } from './style/theme'
 import Layout from './layout/layout'
+import { BookStoreThemeProvider } from './context/themeContext'
+import ThemeSwitcher from './components/common/header/ThemeSwitcher'
 
 function App() {
 
   return (
     <>
-      <ThemeProvider theme={light}>
-        <GlobalStyle themeName="light"/>
+      <BookStoreThemeProvider >
         <Layout>
+          <ThemeSwitcher />
           <div>Hello World</div>
         </Layout>
-      </ThemeProvider>
+      </BookStoreThemeProvider>
     </>
   )
 }

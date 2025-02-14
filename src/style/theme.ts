@@ -25,3 +25,14 @@ export const dark:Theme = {
     third: 'darkblue'
   }
 }
+
+export const getTheme = (themeName: ThemeName):Theme => {
+  switch (themeName) {
+    case 'light':
+      return light;
+    case 'dark':
+      return dark;
+    default:
+      throw new Error(`Invalid theme name: ${themeName}`);
+  }
+}

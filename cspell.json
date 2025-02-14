@@ -1,5 +1,0 @@
-{
-  "words": [
-    "<Header />\n      <main>{children}</main>"
-  ]
-}
