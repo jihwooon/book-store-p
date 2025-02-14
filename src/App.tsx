@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'styled-components'
 import './App.css'
-import Header from './components/common/header'
 import GlobalStyle from './style/global'
-import { dark, light } from './style/theme'
+import { light } from './style/theme'
+import Layout from './layout/layout'
 
 function App() {
 
@@ -10,8 +10,9 @@ function App() {
     <>
       <ThemeProvider theme={light}>
         <GlobalStyle themeName="light"/>
-        <Header/>
-        <div>Hello World</div>
+        <Layout>
+          <div>Hello World</div>
+        </Layout>
       </ThemeProvider>
     </>
   )
