@@ -1,4 +1,5 @@
 import { FaRegUser, FaSignInAlt } from "react-icons/fa";
+import { Link } from "react-router";
 import styled from "styled-components";
 
 const CATEGORY = [
@@ -26,9 +27,9 @@ const Header = () => {
         <ul>
           {CATEGORY.map((category) => (
             <li key={category.id}>
-              <a href={category.id === null ? '/books':`/books/?category_id=${category.id}`}>
+              <Link to={category.id === null ? '/books':`/books/?category_id=${category.id}`}>
                 {category.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -36,14 +37,14 @@ const Header = () => {
       <nav className="auth">
         <ul>
           <li>
-            <a href="/login">
+            <Link to="/login">
               <FaSignInAlt />로그인
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/signup">
+            <Link to="/signup">
               <FaRegUser />회원가입
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

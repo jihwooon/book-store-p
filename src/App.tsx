@@ -2,17 +2,27 @@ import './App.css'
 import Layout from './layout/layout'
 import { BookStoreThemeProvider } from './context/themeContext'
 import Home from './page/home'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import Error from './components/common/error'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout><Home /></Layout>,
+    errorElement: <Error />,
+  },
+  {
+    path: '/books',
+    element: <Layout><div>도서목록</div></Layout>,
+  }
+]);
 
 function App() {
 
   return (
-    <>
-      <BookStoreThemeProvider >
-        <Layout>
-          <Home/>
-        </Layout>
-      </BookStoreThemeProvider>
-    </>
+    <BookStoreThemeProvider >
+      <RouterProvider router={router} />
+    </BookStoreThemeProvider>
   )
 }
 
