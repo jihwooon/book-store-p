@@ -3,40 +3,51 @@ import Title from "../components/common/title";
 import InputText from "../components/common/inputText";
 import Button from "../components/common/Button";
 import { Link } from "react-router";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { signup } from "../api/auth.api";
+import { useNavigate } from "react-router";
+import { useAlert } from "../hook/useAlert";
+
+export interface SignupProps {
+  email: string;
+  password: string;
+}
 
 const Signup = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
+  const showAlert = useAlert();
 
-  const handleSummit =(event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    console.log(email, password);
+  const { register, handleSubmit, formState: { errors } } = useForm<SignupProps>();
+  const onSubmit = (data: SignupProps) => {
+    signup(data).then(() => {
+      showAlert('회원가입이 완료되었습니다.')
+      navigate('/login');
+    })
   }
 
   return (
     <>
       <Title size="large">회원가입</Title>
       <SignupStyle>
-        <form onSubmit={handleSummit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
             <InputText
               placeholder="이메일"
               inputType="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              {...register('email', { required: true })}
             />
+            {errors.email && <p className="errot-text">이메일을 입력합니다.</p>}
           </fieldset>
           <fieldset>
             <InputText
               placeholder="비밀번호"
               inputType="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              {...register('password', { required: true })}
             />
+            {errors.password && <p className="errot-text">패스워드를 입력합니다.</p>}
           </fieldset>
           <fieldset>
-            <Button type="submit" size="large" scheme="primary">가입하기</Button>
+            <Button type="submit" size="medium" scheme="primary">가입하기</Button>
           </fieldset>
           <div className="info">
             <Link to="/reset">비밀번호 초기화</Link>
@@ -54,22 +65,22 @@ const SignupStyle = styled.div`
   fieldset {
     border: 0;
     padding: 0 0 8px 0;
-    .errot-text {
+    .error-text {
       color: red;
     }
+  }
 
-    input {
-      width: 100%;
-    }
+  input {
+    width: 100%;
+  }
 
-    button {
-      width: 100%;
-    }
+  button {
+    width: 100%;
+  }
 
-    info {
-      text-align: center;
-      padding: 16px 0 0 0;
-    }
+  .info {
+    text-align: center;
+    padding: 16px 0 0 0;
   }
 `
 
