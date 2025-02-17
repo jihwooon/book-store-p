@@ -1,23 +1,11 @@
 import { FaRegUser, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router";
 import styled from "styled-components";
-
-const CATEGORY = [
-  {
-    id: 0,
-    name: '동화',
-  },
-  {
-    id: 1,
-    name: '소설'
-  },
-  {
-    id: 2,
-    name: '사회'
-  }
-]
+import { useCategory } from "../../hook/useCategory";
 
 const Header = () => {
+  const{ categories } = useCategory();
+
   return (
     <HeaderStyle>
       <h1 className="logo">
@@ -25,7 +13,7 @@ const Header = () => {
       </h1>
       <nav className="category">
         <ul>
-          {CATEGORY.map((category) => (
+          {categories.map((category) => (
             <li key={category.id}>
               <Link to={category.id === null ? '/books':`/books/?category_id=${category.id}`}>
                 {category.name}
