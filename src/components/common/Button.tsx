@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { ButtonScheme, ButtonSize } from "../../style/theme";
+import { ButtonHTMLAttributes } from 'react';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   children: React.ReactNode;
   size: ButtonSize,
   scheme: ButtonScheme,
@@ -22,7 +23,7 @@ const ButtonStyle = styled.button<Omit<Props, 'children'>>`
   background-color: ${({ theme, scheme }) => theme.buttonScheme[scheme].backgroundColor};
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadius.default};
-  opacity: ${( { disabled }) => (disabled ? 0.5 : 0.1)};
+  opacity: ${( { disabled }) => (disabled ? 0.1 : 1)};
   pointer-events: ${( { disabled }) => (disabled ? "none" : "auto")};
   cursor: ${( { disabled }) => (disabled ? "none" : "pointer")};
 `

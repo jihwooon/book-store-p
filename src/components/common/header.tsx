@@ -9,7 +9,9 @@ const Header = () => {
   return (
     <HeaderStyle>
       <h1 className="logo">
-        <img src="/logo.png" alt="book-store" />
+        <Link to="/">
+          <img src="/logo.png" alt="book-store" />
+        </Link>
       </h1>
       <nav className="category">
         <ul>
