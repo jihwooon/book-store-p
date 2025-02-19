@@ -24,3 +24,15 @@ export const restPassword = async (data: SignupProps) => {
    password: data.password
  }
 }
+
+// interface LoginResponse {
+//   token: string;
+// }
+
+export const login = async (data: SignupProps) => {
+  // const response = await httpClient.post<LoginResponse>("/users/login", userData)
+
+  return {
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+ }
+}
