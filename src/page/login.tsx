@@ -16,7 +16,7 @@ export interface LoginProps {
 const Login = () => {
   const navigate = useNavigate();
   const showAlert = useAlert();
-  const {isLoggedIn, storeLogin, storeLogout } = useAuthStore();
+  const { storeLogin } = useAuthStore();
 
   const { register, handleSubmit, formState: { errors } } = useForm<LoginProps>();
   const onSubmit = (data: LoginProps) => {
@@ -26,6 +26,8 @@ const Login = () => {
 
       showAlert('로그인에 성공했습니다.')
       navigate('/');
+    }, (error) => {
+      showAlert('로그인이 실패했습니다.')
     })
   }
 
