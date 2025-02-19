@@ -8,3 +8,19 @@ export const signup = async(userData: SignupProps) => {
     password: userData.password
   };
 }
+
+export const restRequest = async (data: SignupProps) => {
+
+ return {
+   email: data.email,
+   password: data.password
+ }
+}
+
+export const restPassword = async (data: SignupProps) => {
+
+ return {
+   email: data.email,
+   password: data.password
+ }
+}

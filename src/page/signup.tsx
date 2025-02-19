@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import Title from "../components/common/title";
 import InputText from "../components/common/inputText";
-import Button from "../components/common/Button";
 import { Link } from "react-router";
 import { useForm } from "react-hook-form";
 import { signup } from "../api/auth.api";
 import { useNavigate } from "react-router";
 import { useAlert } from "../hook/useAlert";
+import Button from "../components/common/button";
 
 export interface SignupProps {
   email: string;
@@ -58,7 +58,7 @@ const Signup = () => {
   );
 };
 
-const SignupStyle = styled.div`
+export const SignupStyle = styled.div`
   max-width: ${({ theme }) => theme.layoutWidth.width.small};
   margin: 80px auto;
 
