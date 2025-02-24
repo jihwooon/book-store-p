@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
     <FooterStyle>
       <h1 className="logo">
-        <img src={""} alt="book store" />
+        <img src={logo} alt="book store" />
       </h1>
       <div className="copyright">
         <p>copyright(c) 2025. bookstore</p>
@@ -12,6 +13,7 @@ const Footer = () => {
     </FooterStyle>
   );
 };
+
 const FooterStyle = styled.footer`
   width: 100%;
   margin: 0 auto;

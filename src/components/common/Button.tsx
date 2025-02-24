@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ButtonScheme, ButtonSize } from "../../style/theme";
 import { ButtonHTMLAttributes } from 'react';
+import { ButtonScheme, ButtonSize } from "../../style/theme";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   isLoading?: boolean;
 }
 
-const Button = ({ children, size, scheme, disabled, isLoading}: Props) => {
+const Button = ({ children, size, scheme, disabled, isLoading }: Props) => {
   return (
     <ButtonStyle size={size} scheme={scheme} disabled={disabled} isLoading={isLoading}>{children}</ButtonStyle>
   );

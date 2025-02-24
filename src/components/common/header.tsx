@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import styled from "styled-components";
 import { useCategory } from "../../hook/useCategory";
 import { useAuthStore } from "../../store/authStore";
+import logo from '../../assets/logo.png'
 
 const Header = () => {
   const{ categories } = useCategory();
@@ -12,7 +13,7 @@ const Header = () => {
     <HeaderStyle>
       <h1 className="logo">
         <Link to="/">
-          <img src="/logo.png" alt="book-store" />
+          <img src={logo} alt="book-store" />
         </Link>
       </h1>
       <nav className="category">
