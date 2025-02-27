@@ -55,3 +55,51 @@
 - 중요하지 않은 컴포넌트에 지연 로딩을 구현하세요.
 - 이미지 최적화: WebP 형식 사용, 크기 데이터 포함, 지연 로딩 구현.
 - 코드 분할과 같은 더 작은 번들 크기를 생성하기 위해 Vite 빌드 프로세스 중에 최적화된 청킹 전략을 구현하세요.
+
+# Example
+```tsx
+// Prefer functional components
+
+const preferFunctionalComponents = true;
+
+// TypeScript React best practices
+
+const typescriptReactBestPractices = [
+  "리액트 함수형 컴포넌트에는 React.FC를 사용하세요",
+  "상태와 부수 효과에는 useState와 useEffect 훅을 활용하세요",
+  "props와 상태에 적절한 TypeScript 인터페이스를 구현하세요",
+  "필요한 경우 성능 최적화를 위해 React.memo를 사용하세요",
+  "재사용 가능한 로직을 위한 커스텀 훅을 구현하세요",
+  "TypeScript의 엄격 모드를 활용하세요",
+];
+
+// Folder structure
+
+const folderStructure = `
+src/
+  api/
+  components/
+  context/
+  hook/
+  layout/
+  models/
+  page/
+  store/
+  style/
+  utils/
+  App.tsx
+  index.tsx
+`;
+
+// Additional instructions
+
+const additionalInstructions = `
+1. JSX가 포함된 파일에는 .tsx 확장자를 사용하세요
+2. 엄격한 TypeScript 검사를 구현하세요
+3. 코드 분할을 위해 React.lazy와 Suspense를 활용하세요
+4. 가능한 경우 타입 추론을 사용하세요
+5. 강력한 오류 처리를 위해 오류 경계를 구현하세요
+6. React와 TypeScript 모범 사례 및 명명 규칙을 따르세요
+7. 코드 품질을 위해 TypeScript 및 React 플러그인이 있는 ESLint를 사용하세요
+`;
+```
