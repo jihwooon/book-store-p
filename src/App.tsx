@@ -7,16 +7,13 @@ import Error from './components/common/error'
 import Signup from './page/signup'
 import ResetPassword from './page/reset-password'
 import Login from './page/login'
+import Books from './page/books'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout><Home /></Layout>,
     errorElement: <Error />,
-  },
-  {
-    path: '/books',
-    element: <Layout><div>도서목록</div></Layout>,
   },
   {
     path: '/signup',
@@ -29,7 +26,11 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Layout><Login /></Layout>
-  }
+  },
+  {
+    path: '/books',
+    element: <Layout><Books /></Layout>,
+  },
 ]);
 
 function App() {
