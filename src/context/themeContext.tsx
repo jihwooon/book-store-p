@@ -32,6 +32,8 @@ export const BookStoreThemeProvider = ({ children } : { children: React.ReactNod
    setThemeName(savedThemeName || DEFAULT_THEME_NAME)
   },[])
 
+
+
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <ThemeProvider theme={getTheme(themeName)}>
