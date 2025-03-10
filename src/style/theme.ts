@@ -40,7 +40,7 @@ export const light: Theme = {
   color: {
     primary: '#FF5800',
     background: 'lightgray',
-    secondary: 'blue',
+    secondary: 'darkblue',
     third: 'lightblue',
     border: 'gray',
     text: 'black'
