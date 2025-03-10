@@ -1,50 +1,98 @@
-# React + TypeScript + Vite
+# 도서 스토어 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 React, TypeScript, Vite를 사용한 도서 스토어 웹 애플리케이션입니다.
 
-Currently, two official plugins are available:
+## 기술 스택
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- Styled Components
+- React Router
+- React Icons
 
-## Expanding the ESLint configuration
+## 주요 기능
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 도서 목록 조회
+- 카테고리별 필터링
+- 그리드/리스트 뷰 전환
+- 페이지네이션
 
-- Configure the top-level `parserOptions` property like this:
+## 최근 작업 내용 (2025-03-11)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 코드 리팩토링 및 성능 최적화
+
+1. **useBooks 훅 개선**
+   - 함수형 프로그래밍 패턴 적용
+   - 상태 관리 개선 (개별 상태 → 통합 상태 객체)
+   - 비동기 처리 개선 (Promise → async/await)
+   - 오류 처리 추가
+
+2. **Books 페이지 컴포넌트 개선**
+   - 함수형 프로그래밍 패턴 적용
+   - 스타일링 개선 (레이아웃, 여백, 반응형 디자인)
+   - 컴포넌트 구조 개선 (필터 컨테이너 추가)
+   - Pagination 컴포넌트에 페이지네이션 정보 전달
+
+3. **Pagination 컴포넌트 개선**
+   - 인터페이스 정의 추가
+   - 함수형 프로그래밍 패턴 적용
+   - 스타일링 개선 (버튼, 레이아웃)
+   - 페이지 정보 표시 기능 추가
+
+4. **BookItem 컴포넌트 개선**
+   - 클래스 기반 스타일링 → 컴포넌트 기반 스타일링으로 변경
+   - 성능 최적화 (이미지 지연 로딩)
+   - 접근성 개선
+   - 애니메이션 효과 추가
+   - 텍스트 오버플로우 처리
+
+5. **BooksViewSwitcher 컴포넌트 개선**
+   - 상태 관리 추가 (그리드/리스트 뷰 전환)
+   - 아이콘 추가
+   - 접근성 개선 (aria-label 추가)
+   - 스타일링 개선
+
+## 프로젝트 구조
+
+```
+src/
+  ├── api/            # API 호출 관련 코드
+  ├── assets/         # 이미지, 폰트 등 정적 자원
+  ├── components/     # 재사용 가능한 컴포넌트
+  │   ├── books/      # 도서 관련 컴포넌트
+  │   └── common/     # 공통 컴포넌트
+  ├── constants/      # 상수 정의
+  ├── context/        # React Context
+  ├── hook/           # 커스텀 훅
+  ├── layout/         # 레이아웃 컴포넌트
+  ├── models/         # 타입 정의
+  ├── page/           # 페이지 컴포넌트
+  ├── store/          # 상태 관리
+  ├── style/          # 스타일 관련 코드
+  └── utils/          # 유틸리티 함수
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 개발 환경 설정
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+# 의존성 설치
+npm install
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# 개발 서버 실행
+npm run dev
+
+# 빌드
+npm run build
+
+# 린트 실행
+npm run lint
 ```
+
+## 향후 계획
+
+- 도서 상세 페이지 구현
+- 장바구니 기능 추가
+- 사용자 인증 구현
+- 검색 기능 개선
+- 테스트 코드 작성

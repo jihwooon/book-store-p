@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useCategory } from "../../hook/useCategory";
 import Button from "../common/button";
 import { useSearchParams } from "react-router";
+import { QUERYSTRING } from "../../constants/querystring";
 
 const BooksFilter = () => {
   const { categories } = useCategory();
@@ -11,9 +12,9 @@ const BooksFilter = () => {
     const newSearchParams = new URLSearchParams(searchParams);
 
     if (id === null) {
-      newSearchParams.delete('category_id') 
+      newSearchParams.delete(QUERYSTRING.CATEGORY_ID) 
     } else {
-      newSearchParams.set('category_id', id.toString());
+      newSearchParams.set(QUERYSTRING.CATEGORY_ID, id.toString());
     }
 
     setSearchParams(newSearchParams);
@@ -22,10 +23,10 @@ const BooksFilter = () => {
   const handleNews = () => {
     const newSearchParams = new URLSearchParams(searchParams);
 
-    if (newSearchParams.get('news')) {
-      newSearchParams.delete('news')
+    if (newSearchParams.get(QUERYSTRING.NEWS_KEY)) {
+      newSearchParams.delete(QUERYSTRING.NEWS_KEY)
     } else {
-      newSearchParams.set('news', "true");
+      newSearchParams.set(QUERYSTRING.NEWS_KEY, "true");
     }
 
     setSearchParams(newSearchParams);
@@ -48,7 +49,7 @@ const BooksFilter = () => {
       <div className="new">
         <Button
           size="small"
-          scheme={searchParams.get('news') ? 'primary' : "normal"}
+          scheme={searchParams.get(QUERYSTRING.NEWS_KEY) ? 'primary' : "normal"}
           onClick={() => handleNews()}
         >
           신간
