@@ -7,12 +7,11 @@ interface Props {
 }
 
 const BooksList = ({ books }: Props) => {
-  console.log(books)
 
   return (
     <BooksListStyle>
       {books.map((book) => (
-        <BookItem book={book}/>
+        <BookItem key={book.id} book={book}/>
       ))}
     </BooksListStyle>
   );
