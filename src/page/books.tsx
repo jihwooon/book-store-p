@@ -34,7 +34,7 @@ const BooksStyle = styled.div`
 
   .filter {
     display: flex;
-    justify-content: speace-between;
+    justify-content: space-between;
     align-item: center;
     padding: 20px 0;
   }
