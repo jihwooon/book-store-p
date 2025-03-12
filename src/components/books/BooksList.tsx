@@ -1,33 +1,43 @@
 import styled from "styled-components";
 import BookItem from "./BookItem";
 import { Book } from "../../models/book.model";
+import { useLocation } from "react-router";
+import { useEffect, useState } from "react";
+import { QUERYSTRING } from "../../constants/querystring";
+import { ViewMode } from "./BooksViewSwitcher";
 
-const BooksList = () => {
+interface Props {
+  books : Book[]
+}
+
+const BooksList = ({ books }: Props) => {
+  const [view, setView] = useState<ViewMode>('grid')
+  const location = useLocation()
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    if(params.get(QUERYSTRING.VIEW)) {
+      setView(params.get(QUERYSTRING.VIEW) as ViewMode)
+    }
+  }, [location.search])
+
   return (
-    <BooksListStyle>
-      <BookItem book={dummyBooks}/>
+    <BooksListStyle view={view}>
+      {books.map((book) => (
+        <BookItem key={book.id} book={book}/>
+      ))}
     </BooksListStyle>
   );
 };
 
-const BooksListStyle = styled.div``
+interface BooksListStyleProps {
+  view: ViewMode;
+}
+
+const BooksListStyle = styled.div<BooksListStyleProps>`
+  display: grid;
+  grid-template-columns: ${({ view }) => (view === 'grid' ? 'repeat(4, 1fr)' : "repeat(1, 1fr)")};
+  gap: 24px;
+`
 
 export default BooksList;
-
-export const dummyBooks: Book =
-  {
-    id: 1,
-    title: "JavaScript 완벽 가이드",
-    img: 101,
-    category_id: 1,
-    form: "paperback",
-    isbn: "978-1491952023",
-    summary: "자바스크립트 언어의 핵심 기능과 프로그래밍 테크닉을 설명하는 완벽한 참고서",
-    detail: "이 책은 자바스크립트의 모든 측면을 다룹니다. 기본 개념부터 고급 기술까지 체계적으로 설명합니다. ES6 이후의 최신 문법과 API도 포함되어 있습니다.",
-    author: "데이비드 플래너건",
-    pages: 708,
-    contents: "1장: 자바스크립트 소개\n2장: 어휘 구조\n3장: 타입, 값, 변수\n4장: 표현식과 연산자",
-    price: 45000,
-    likes: 528,
-    pubDate: "2020-07-15"
-  }
