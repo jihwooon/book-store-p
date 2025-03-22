@@ -28,7 +28,7 @@ const ResetPassword = () => {
       })
     } else {
       restRequest(data).then(() => {
-       setResetPassword(true)
+        setResetPassword(true)
       })
     }
   }

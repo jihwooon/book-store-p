@@ -7,12 +7,12 @@ interface StoreState {
 }
 
 export const getToken = () => {
-   const token = localStorage.getItem('token')
-   return token
+  const token = localStorage.getItem('token')
+  return token
 };
 
 const setToken = (token: string) => {
- localStorage.setItem('token', token)
+  localStorage.setItem('token', token)
 }
 
 export const removeToken = () => {
@@ -28,5 +28,5 @@ export const useAuthStore = create<StoreState>((set) => ({
   storeLogout: () => {
     set({ isLoggedIn: false });
     removeToken()
-  }
+  },
 }));

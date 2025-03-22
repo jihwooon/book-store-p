@@ -13,12 +13,12 @@ export const createClient = (config?: AxiosRequestConfig) => {
       Authorization: getToken() ? getToken() : '',
     },
     withCredentials: true,
-    ...config
+    ...config,
   });
 
   client.interceptors.response.use(
     (response) => response,
-    (error) =>  {
+    (error) => {
       if (error.response.status === 401) {
         removeToken();
         window.location.href = '/login';
@@ -26,7 +26,7 @@ export const createClient = (config?: AxiosRequestConfig) => {
       }
 
       return Promise.reject(error)
-    }
+    },
   );
 
   return client;

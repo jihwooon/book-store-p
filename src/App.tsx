@@ -22,11 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/reset',
-    element: <Layout><ResetPassword /></Layout>
+    element: <Layout><ResetPassword /></Layout>,
   },
   {
     path: '/login',
-    element: <Layout><Login /></Layout>
+    element: <Layout><Login /></Layout>,
   },
   {
     path: '/books',
@@ -34,8 +34,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/books/:bookId',
-    element: <Layout><BookDetail /></Layout>
-  }
+    element: <Layout><BookDetail /></Layout>,
+  },
 ]);
 
 function App() {

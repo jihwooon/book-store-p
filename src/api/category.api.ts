@@ -8,11 +8,11 @@ export const fetchCategory = async () => {
     },
     {
       id: 1,
-      name: '소설'
+      name: '소설',
     },
     {
       id: 2,
-      name: '사회'
-    }
+      name: '사회',
+    },
   ];
 }

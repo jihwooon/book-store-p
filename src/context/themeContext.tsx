@@ -23,14 +23,14 @@ export const BookStoreThemeProvider = ({ children } : { children: React.ReactNod
 
   const toggleTheme = () => {
     setThemeName(themeName === DEFAULT_THEME_NAME ? 'dark' : 'light')
-    localStorage.setItem(THEME_LOCALSTORAGE_KEY, themeName === 'light' ? 'dark' : 'light' )
+    localStorage.setItem(THEME_LOCALSTORAGE_KEY, themeName === 'light' ? 'dark' : 'light')
   }
 
   useEffect(() => {
-   const savedThemeName = localStorage.getItem(THEME_LOCALSTORAGE_KEY) as ThemeName
+    const savedThemeName = localStorage.getItem(THEME_LOCALSTORAGE_KEY) as ThemeName
 
-   setThemeName(savedThemeName || DEFAULT_THEME_NAME)
-  },[])
+    setThemeName(savedThemeName || DEFAULT_THEME_NAME)
+  }, [])
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>

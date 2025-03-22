@@ -24,21 +24,21 @@ const Pagenation = ({ pagination }: Props) => {
   return (
     <PagenationStyle>
       {page > 0 && (
-          <ol>
-            {Array(page).fill(0).map((_, index) => (
-                <li>
-                  <Button
-                    key={index}
-                    size="small"
-                    scheme={index + 1 === currentPage ? 'primary' : 'normal'}
-                    onClick={() => handleClickPage(index + 1)}
-                  >
-                    {index + 1}
-                  </Button>
-                </li>
-            ))}
-          </ol>
-        ) 
+        <ol>
+          {Array(page).fill(0).map((_, index) => (
+            <li>
+              <Button
+                key={index}
+                size="small"
+                scheme={index + 1 === currentPage ? 'primary' : 'normal'}
+                onClick={() => handleClickPage(index + 1)}
+              >
+                {index + 1}
+              </Button>
+            </li>
+          ))}
+        </ol>
+      )
       }
     </PagenationStyle>
   );

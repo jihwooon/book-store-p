@@ -6,13 +6,13 @@ import { QUERYSTRING } from "../../constants/querystring";
 
 const BooksFilter = () => {
   const { categories } = useCategory();
-  const [searchParams, setSearchParams] = useSearchParams(); 
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleCategory = (id: number | null) => {
     const newSearchParams = new URLSearchParams(searchParams);
 
     if (id === null) {
-      newSearchParams.delete(QUERYSTRING.CATEGORY_ID) 
+      newSearchParams.delete(QUERYSTRING.CATEGORY_ID)
     } else {
       newSearchParams.set(QUERYSTRING.CATEGORY_ID, id.toString());
     }

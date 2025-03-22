@@ -8,12 +8,12 @@ import { useEffect } from "react";
 const ViewOptions = [
   {
     value: "list",
-    icon: <FaList />
-  }, 
+    icon: <FaList />,
+  },
   {
     value: "grid",
-    icon: <FaTh />
-  }
+    icon: <FaTh />,
+  },
 ]
 
 export type ViewMode = 'grid' | 'list'
@@ -29,10 +29,10 @@ const BooksViewSwitcher = () => {
   }
 
   useEffect(() => {
-    if(!searchParams.get(QUERYSTRING.VIEW)) {
+    if (!searchParams.get(QUERYSTRING.VIEW)) {
       handleSwitch("grid")
     }
-  },[])
+  }, [])
 
   return (
     <BooksViewSwitcherStyle>

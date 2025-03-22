@@ -16,7 +16,7 @@ const BooksList = ({ books }: Props) => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
-    if(params.get(QUERYSTRING.VIEW)) {
+    if (params.get(QUERYSTRING.VIEW)) {
       setView(params.get(QUERYSTRING.VIEW) as ViewMode)
     }
   }, [location.search])

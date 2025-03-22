@@ -54,7 +54,7 @@ const BookItemStyle = styled.div<Pick<Props, 'view'>>`
   .content {
       padding: 16px;
       position: relative;
-      flex: ${({view}) => view === 'grid' ? 0 : 1};
+      flex: ${({ view }) => view === 'grid' ? 0 : 1};
 
     .title {
       font-size: 1.25rem;
@@ -85,7 +85,7 @@ const BookItemStyle = styled.div<Pick<Props, 'view'>>`
       color: ${({ theme }) => theme.color.primary};
       margin: 0 0 4px 0;
       font-weight: 700;
-      border: 1px solid ${({ theme}) => theme.color.border};
+      border: 1px solid ${({ theme }) => theme.color.border};
       border-radius: ${({ theme }) => theme.borderRadius.default};
       padding: 4px 12px;
       position: absolute;

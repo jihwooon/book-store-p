@@ -9,13 +9,13 @@ export const useCategory = () => {
 
   const setAtive = () => {
     const params = new URLSearchParams(location.search);
-    
+
     if (params.get('category_id')) {
       setCategories((prev) => {
         return prev.map((item) => {
           return {
             ...item,
-            isActive: item.id === Number(params.get('category_id'))
+            isActive: item.id === Number(params.get('category_id')),
           }
         })
       })
@@ -24,13 +24,13 @@ export const useCategory = () => {
 
   useEffect(() => {
     fetchCategory().then((category) => {
-     const categoryWithAll = [
-       {
-         id: null,
-         name: "전체"
-       },
-       ...category
-     ]
+      const categoryWithAll = [
+        {
+          id: null,
+          name: "전체",
+        },
+        ...category,
+      ]
 
       setCategories(categoryWithAll)
       setAtive()

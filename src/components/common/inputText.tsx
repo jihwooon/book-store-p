@@ -7,7 +7,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement>{
   inputType?: 'text' | 'email' | 'password' | 'number';
 }
 
-const InputText = React.forwardRef(({ placeholder, inputType, onChange ,...props }: Props, ref: ForwardedRef<HTMLInputElement>) => {
+const InputText = React.forwardRef(({ placeholder, inputType, onChange, ...props }: Props, ref: ForwardedRef<HTMLInputElement>) => {
   return <InputTextStyled placeholder={placeholder} ref={ref} type={inputType} onChange={onChange}{...props}/>;
 });
 

@@ -6,8 +6,8 @@ import { useAuthStore } from "../../store/authStore";
 import logo from '../../assets/logo.png'
 
 const Header = () => {
-  const{ categories } = useCategory();
-  const {isLoggedIn, storeLogout } = useAuthStore();
+  const { categories } = useCategory();
+  const { isLoggedIn, storeLogout } = useAuthStore();
 
   return (
     <HeaderStyle>
@@ -20,7 +20,7 @@ const Header = () => {
         <ul>
           {categories.map((category) => (
             <li key={category.id}>
-              <Link to={category.id === null ? '/books':`/books/?category_id=${category.id}`}>
+              <Link to={category.id === null ? '/books' : `/books/?category_id=${category.id}`}>
                 {category.name}
               </Link>
             </li>

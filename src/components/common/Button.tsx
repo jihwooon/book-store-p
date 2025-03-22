@@ -24,9 +24,9 @@ const ButtonStyle = styled.button<Omit<Props, 'children'>>`
   background-color: ${({ theme, scheme }) => theme.buttonScheme[scheme].backgroundColor};
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadius.default};
-  opacity: ${( { disabled }) => (disabled ? 0.1 : 1)};
-  pointer-events: ${( { disabled }) => (disabled ? "none" : "auto")};
-  cursor: ${( { disabled }) => (disabled ? "none" : "pointer")};
+  opacity: ${({ disabled }) => (disabled ? 0.1 : 1)};
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
+  cursor: ${({ disabled }) => (disabled ? "none" : "pointer")};
 `
 
 export default Button;

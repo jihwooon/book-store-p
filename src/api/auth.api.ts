@@ -5,24 +5,24 @@ export const signup = async(userData: SignupProps) => {
 
   return {
     email: userData.email,
-    password: userData.password
+    password: userData.password,
   };
 }
 
 export const restRequest = async (data: SignupProps) => {
 
- return {
-   email: data.email,
-   password: data.password
- }
+  return {
+    email: data.email,
+    password: data.password,
+  }
 }
 
 export const restPassword = async (data: SignupProps) => {
 
- return {
-   email: data.email,
-   password: data.password
- }
+  return {
+    email: data.email,
+    password: data.password,
+  }
 }
 
 // interface LoginResponse {
@@ -34,5 +34,5 @@ export const login = async (data: SignupProps) => {
 
   return {
     token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
- }
+  }
 }

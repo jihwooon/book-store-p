@@ -43,53 +43,53 @@ export const light: Theme = {
     secondary: 'darkblue',
     third: 'lightblue',
     border: 'gray',
-    text: 'black'
+    text: 'black',
   },
   heading: {
     large: {
-      fontSize: "2rem"
+      fontSize: "2rem",
     },
     medium: {
-      fontSize: "1.5rem"
+      fontSize: "1.5rem",
     },
     small: {
-      fontSize: "1rem"
-    }
+      fontSize: "1rem",
+    },
   },
   button: {
     large: {
       fontsize: "2rem",
-      padding: "1rem 2rem"
+      padding: "1rem 2rem",
     },
     medium: {
       fontsize: "1.5rem",
-      padding: "0.5rem 1rem"
+      padding: "0.5rem 1rem",
     },
     small: {
       fontsize: "0.75rem",
-      padding: "0.25rem 0.5rem"
-    }
+      padding: "0.25rem 0.5rem",
+    },
   },
   buttonScheme: {
     primary: {
       color: "white",
-      backgroundColor: "midnightblue"
+      backgroundColor: "midnightblue",
     },
     normal: {
       color: "black",
-      backgroundColor: "lightgray"
-    }
+      backgroundColor: "lightgray",
+    },
   },
   borderRadius: {
-    default: "4px"
+    default: "4px",
   },
   layoutWidth: {
     width: {
       large: "1020px",
       medium: "760px",
-      small: "320px"
-    }
-  }
+      small: "320px",
+    },
+  },
 }
 
 export const dark:Theme = {
@@ -101,17 +101,17 @@ export const dark:Theme = {
     secondary: 'darkgreen',
     third: 'darkblue',
     border: 'grey',
-    text: 'black'
+    text: 'black',
   },
 }
 
 export const getTheme = (themeName: ThemeName):Theme => {
   switch (themeName) {
-    case 'light':
-      return light;
-    case 'dark':
-      return dark;
-    default:
-      throw new Error(`Invalid theme name: ${themeName}`);
+  case 'light':
+    return light;
+  case 'dark':
+    return dark;
+  default:
+    throw new Error(`Invalid theme name: ${themeName}`);
   }
 }
