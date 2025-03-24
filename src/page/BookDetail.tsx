@@ -5,6 +5,7 @@ import { getImgSrc } from "../utils/image";
 import Title from "../components/common/title";
 import { BookDetail as IBookDetail } from "../models/book.model";
 import { formatDate, formatNumber } from "../utils/format";
+import EllipsisBox from "../components/common/EllipsisBox";
 
 const bookInfoList = [
   {
@@ -80,7 +81,13 @@ const BookDetail = () => {
           장바구니
         </div>
       </header>
-      <h1>{book.author}</h1>
+      <div className="content">
+        <Title size="medium">상세 설명</Title>
+        <EllipsisBox linelimit={4}>{book.detail}</EllipsisBox>
+
+        <Title size="medium">목차</Title>
+        <p className="content">{book.contents}</p>
+      </div>
     </BookDetailStyle>
   );
 }
@@ -119,6 +126,16 @@ const BookDetailStyle = styled.div`
       a {
         color: ${({ theme }) => theme.color.primary}
       }
+    }
+  }
+
+  .content {
+    .detail {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
     }
   }
 `;
