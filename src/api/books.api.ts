@@ -92,7 +92,7 @@ export const fetchBook = async (bookId: string | undefined) => {
     price: 45000,
     likes: 528,
     pubDate: "2020-07-15",
-    categoryName: "",
+    categoryName: "소설",
     liked: true,
   }
 }
