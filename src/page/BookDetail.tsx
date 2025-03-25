@@ -6,6 +6,7 @@ import Title from "../components/common/title";
 import { BookDetail as IBookDetail } from "../models/book.model";
 import { formatDate, formatNumber } from "../utils/format";
 import EllipsisBox from "../components/common/EllipsisBox";
+import LikeButton from "../components/book/LikeButton";
 
 const bookInfoList = [
   {
@@ -73,14 +74,13 @@ const BookDetail = () => {
         <p className="summary">
           {book.summary}
         </p>
-
-        <div className="like">
-          라이크
-        </div>
-        <div className="add-cart">
-          장바구니
-        </div>
       </header>
+      <div className="like">
+        <LikeButton book={book} onClick={() => {}}/>
+      </div>
+      <div className="add-cart">
+          장바구니
+      </div>
       <div className="content">
         <Title size="medium">상세 설명</Title>
         <EllipsisBox linelimit={4}>{book.detail}</EllipsisBox>
@@ -137,7 +137,7 @@ const BookDetailStyle = styled.div`
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
     }
-  }
+  } 
 `;
 
 export default BookDetail;
