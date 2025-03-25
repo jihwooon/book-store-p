@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { BookDetail } from "../../models/book.model";
 import Button from "../common/button";
 import { FaHeart } from "react-icons/fa";
-import { useState } from "react";
 
 interface Props {
   book: BookDetail;
@@ -10,7 +9,6 @@ interface Props {
 }
 
 const LikeButton = ({ book, onClick }: Props) => {
-  const [count, setCount] = useState<number>()
 
   // 좋아요 버튼 클릭 시 scheme가 like로 표시되고 이벤트가 발생해야 한다.
   return (

@@ -7,6 +7,7 @@ import { BookDetail as IBookDetail } from "../models/book.model";
 import { formatDate, formatNumber } from "../utils/format";
 import EllipsisBox from "../components/common/EllipsisBox";
 import LikeButton from "../components/book/LikeButton";
+import AddToCart from "../components/book/AddToCart";
 
 const bookInfoList = [
   {
@@ -70,17 +71,17 @@ const BookDetail = () => {
               </dl>
             ))
           }
+          <p className="summary">
+            {book.summary}
+          </p>
+          <div className="like">
+            <LikeButton book={book} onClick={() => {}}/>
+          </div>
+          <div className="add-cart">
+            <AddToCart book={book} />
+          </div>
         </div>
-        <p className="summary">
-          {book.summary}
-        </p>
       </header>
-      <div className="like">
-        <LikeButton book={book} onClick={() => {}}/>
-      </div>
-      <div className="add-cart">
-          장바구니
-      </div>
       <div className="content">
         <Title size="medium">상세 설명</Title>
         <EllipsisBox linelimit={4}>{book.detail}</EllipsisBox>
@@ -97,7 +98,7 @@ const BookDetailStyle = styled.div`
     display: flex;
     align-items: start;
     gap: 24px;
-    padding 0 0 24px 0;
+    padding: 0 0 24px 0;
 
     .img {
       flex: 1;
@@ -126,6 +127,10 @@ const BookDetailStyle = styled.div`
       a {
         color: ${({ theme }) => theme.color.primary}
       }
+    }
+    
+    .summary {
+      flex: 1;
     }
   }
 
